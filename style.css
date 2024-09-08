@@ -1,0 +1,376 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f8f9fa;
+  color: #333;
+}
+
+.custom-cursor {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border: 2px solid orange; /* Orange border */
+  border-radius: 50%;
+  pointer-events: none; /* Make sure the cursor doesn't block interactions */
+  z-index: 1000;
+}
+
+.custom-cursor::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 8px;
+  height: 8px;
+  background-color: orange; /* Orange dot */
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 80px);
+  text-align: center;
+  padding: 20px;
+}
+
+.intro {
+  max-width: 800px;
+}
+
+.intro p {
+  color: #333;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.intro h1 {
+  font-size: 3rem;
+  margin: 20px 0;
+}
+
+.intro div {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.intro button {
+  background-color: #ff6600;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+footer {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+}
+
+footer p {
+  font-size: 12px;
+  color: #666;
+}
+/* From Uiverse.io by mrhyddenn */
+button {
+  background: #fff;
+  border: none;
+  padding: 10px 20px;
+  display: inline-block;
+  font-size: 15px;
+  font-weight: 600;
+  width: 180px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transform: skew(-21deg);
+}
+
+span {
+  display: inline-block;
+  transform: skew(21deg);
+}
+
+button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 100%;
+  left: 0;
+  background: rgb(20, 20, 20);
+  opacity: 0;
+  z-index: -1;
+  transition: all 0.5s;
+}
+
+button:hover {
+  color: #fff;
+}
+
+button:hover::before {
+  left: 0;
+  right: 0;
+  opacity: 1;
+}
+/* Add this to your existing CSS */
+
+/* Modal styles */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  z-index: 1001; /* Above the custom cursor */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 600px;
+  border-radius: 10px;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-top: 10px;
+}
+
+input,
+textarea {
+  margin-bottom: 10px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button[type="submit"] {
+  background-color: #ff6600;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+/* CV styles */
+.cv {
+  display: none; /* Hidden by default */
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  max-width: 800px;
+  margin: 20px auto;
+}
+
+.cv h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.cv-section {
+  margin-bottom: 20px;
+}
+/* Add this to your existing CSS */
+.cv-section span,
+.cv-section p {
+  font-style: normal;
+}
+
+.cv-section h3 {
+  margin-bottom: 10px;
+}
+
+.cv-section p {
+  margin: 5px 0;
+}
+/* Add this to your existing CSS */
+#downloadPdf {
+  display: block;
+  margin: 20px auto;
+  background-color: #ff6600;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+span {
+  display: inline;
+}
+
+.cv-container {
+  max-width: 700px;
+  background: #fff;
+  margin: 0px auto 0px;
+  box-shadow: 1px 1px 2px #dad7d7;
+  border-radius: 3px;
+  padding: 40px;
+  margin-top: 50px;
+}
+
+.header {
+  margin-bottom: 30px;
+
+  .full-name {
+    font-size: 40px;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+  }
+
+  .first-name {
+    font-weight: 700;
+  }
+
+  .last-name {
+    font-weight: 300;
+  }
+
+  .contact-info {
+    margin-bottom: 20px;
+  }
+
+  .email,
+  .phone {
+    color: #999;
+    font-weight: 300;
+  }
+
+  .separator {
+    height: 10px;
+    display: inline-block;
+    border-left: 2px solid #999;
+    margin: 0px 10px;
+  }
+
+  .position {
+    font-weight: bold;
+    display: inline-block;
+    margin-right: 10px;
+    text-decoration: underline;
+  }
+}
+
+.details {
+  line-height: 20px;
+
+  .section {
+    margin-bottom: 40px;
+  }
+
+  .section:last-of-type {
+    margin-bottom: 0px;
+  }
+
+  .section__title {
+    letter-spacing: 2px;
+    color: #54afe4;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+  }
+
+  .section__list-item {
+    margin-bottom: 40px;
+  }
+
+  .section__list-item:last-of-type {
+    margin-bottom: 0;
+  }
+
+  .left,
+  .right {
+    vertical-align: top;
+    display: inline-block;
+  }
+
+  .left {
+    width: 60%;
+  }
+
+  .right {
+    tex-align: right;
+    width: 39%;
+  }
+
+  .name {
+    font-weight: bold;
+  }
+
+  a {
+    text-decoration: none;
+    color: #000;
+    font-style: italic;
+  }
+
+  a:hover {
+    text-decoration: underline;
+    color: #000;
+  }
+
+  .skills {
+  }
+
+  .skills__item {
+    margin-bottom: 10px;
+  }
+
+  .skills__item .right {
+    input {
+      display: none;
+    }
+
+    label {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      background: #c3def3;
+      border-radius: 20px;
+      margin-right: 3px;
+    }
+
+    input:checked + label {
+      background: #79a9ce;
+    }
+  }
+}
