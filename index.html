@@ -17,7 +17,6 @@
             <div>
                 <p>Effortlessly craft a standout CV with our easy-to-use builder. Start now and land your dream job!
                     Create a professional CV that highlights your skills and experiences. Quick, easy, and free!</p>
-
             </div>
             <button id="openModal">
                 <span>Create Resume</span>
@@ -33,115 +32,79 @@
                 <h3>Personal Information</h3>
                 <label for="name">First Name:</label>
                 <input type="text" id="name" name="name" required>
-                <label for="name">Last Name:</label>
+                <label for="lastname">Last Name:</label>
                 <input type="text" id="lastname" name="lastname" required>
                 <label for="email">Email:</label>
                 <input type="email" id="email" name="email" required>
 
-                <h3>Introduction </h3>
-                <label for="education">Your Introduction :</label>
-                <textarea id="introuduction" name="education" required></textarea>
-
-                <h3>Education</h3>
-
-                <label for="introduction">Your Introduction :</label>
+                <h3>Introduction</h3>
+                <label for="introduction">Your Introduction:</label>
                 <textarea id="introduction" name="introduction" required></textarea>
 
+                <h3>Education</h3>
+                <label for="education">Education:</label>
+                <textarea id="education" name="education" required></textarea>
 
                 <h3>Work Experience</h3>
                 <label for="workExperience">Work Experience:</label>
                 <textarea id="workExperience" name="workExperience" required></textarea>
 
                 <h3>Skills</h3>
-                <label for="skills">Skills:(comma-seperated)</label>
+                <label for="skills">Skills (comma-separated):</label>
                 <textarea id="skills" name="skills" required></textarea>
 
                 <button type="submit">Generate Resume</button>
             </form>
         </div>
     </div>
+
     <div id="resumeContainer" class="cv" style="display: none;">
         <div class="cv-container">
             <div class="header">
                 <div class="full-name">
                     <span class="first-name" id="cvName" contenteditable="true"></span>
-                    <span class="last-name" id="Lastname" contenteditable="true"></span>
+                    <span class="last-name" id="cvLastname" contenteditable="true"></span>
                 </div>
                 <div class="contact-info">
                     <span class="email">Email: </span>
                     <span class="email-val" id="cvEmail" contenteditable="true"></span>
-                    <span class="separator"></span>
-                    <span class="phone">Phone: </span>
-                    <span class="phone-val" contenteditable="true">111-222-3333</span>
                 </div>
-
                 <div class="about">
-                    <span class="position" contenteditable="true" id="introductions">Your Introduction</span>
-                    <!-- <span class="desc" contenteditable="true">
-                        Your Introduction
-                    </span> -->
+                    <span class="position" contenteditable="true" id="cvIntroduction">Your Introduction</span>
                 </div>
             </div>
+
             <div class="details">
-                <div class="section">
-                    <div class="section__title">Experience</div>
-                    <div class="section__list">
-                        <div class="section__list-item">
-                            <div class="left">
-                                <div class="name" id="cvWorkExperience" contenteditable="true"></div>
-                                <!-- <div class="duration">Your Exp Date</div> -->
-                            </div>
-
-                        </div>
-
-                    </div>
-                </div>
                 <div class="section">
                     <div class="section__title">Education</div>
                     <div class="section__list">
                         <div class="section__list-item">
-                            <div class="left">
-                                <div class="name" id="cvEducation" contenteditable="true"></div>
-                                <!-- <div class="duration">Your Education Date</div> -->
-                            </div>
-
+                            <div class="name" id="cvEducation" contenteditable="true"></div>
                         </div>
-
-
                     </div>
-
                 </div>
+
+                <div class="section">
+                    <div class="section__title">Experience</div>
+                    <div class="section__list">
+                        <div class="name" id="cvWorkExperience" contenteditable="true"></div>
+                    </div>
+                </div>
+
                 <div class="section">
                     <div class="section__title">Skills</div>
-                    <div class="skills">
-                        <div class="skills__item">
-                            <div class="left">
-                                <div class="name" id="cvSkills" contenteditable="true">
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                    <div class="skills__item">
-                        <div class="left" contenteditable="true">
-
-                        </div>
-                    </div>
-
+                    <div class="skills" id="cvSkills" contenteditable="true"></div>
                 </div>
-
             </div>
         </div>
     </div>
 
-    </div>
-
     <button id="downloadPdf" style="display: none;">Download as PDF</button>
+
     <script src="app.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"
         integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
 </body>
 
 </html>
